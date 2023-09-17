@@ -121,9 +121,9 @@ Device Models: These are mathematical representations of transistors, diodes, re
 * **Clock Tree Synthesis**: Clock tree synthesis (CTS) is a crucial step in ensuring that the clock signals reach all parts of the chip with minimal skew and jitter. It involves the generation of a hierarchical tree structure to distribute the clock signals uniformly and meet timing requirements.
 * **Routing**: After placement and CTS, routing is performed to create the physical wires (metal traces) that connect all the components on the chip. This process adheres to design rules and timing constraints.
 * **Signoff**: The Signoff stage encompasses a series of verification and validation steps
-# Getting familiar with open source EDA tools
-**Design preperation steps**
-Type the following commad to open Openlane EDA tool
+# Getting familiar with open-source EDA tools
+**Design preparation steps**
+Type the following command to open the Openlane EDA tool
 
 `cd Desktop/work/tools/`
 `cd openlane_working_dir/`
@@ -132,6 +132,41 @@ Type the following commad to open Openlane EDA tool
 
 Now the shell opens. In the shell type `./flow.tcl -interactive`
 
-To import all pacakges type `package require openlane 0.9`
+To import all packages type `package require openlane 0.9`
+
+![Screenshot 2023-09-17 213922](https://github.com/Spoorthi102003/pes_pd/assets/143829280/a9aa9cfa-d74d-41bb-babd-3335ba2e37a0)
+* After preparing the design, we can see that a new 'runs' folder is created.
+* To synthesize the design we type `run_synthesis`
+* After the synthesis we calculate the flop ratio as: no. of flops/number of cells
+* Here we have done it for dfxtp_2 (2:1 dmux)
+* Also under the runs folder we can check out the netlist file generated after synthesis.
+
+![Screenshot 2023-09-17 225232](https://github.com/Spoorthi102003/pes_pd/assets/143829280/a96a1184-5347-4793-b79e-9e98beef5876)
+
+![Screenshot 2023-09-17 230314](https://github.com/Spoorthi102003/pes_pd/assets/143829280/62f44d5c-a2a8-4a41-a063-860600e14698)
+</details>
+
+<details>
+<summary>DAY2</summary>
+  
+# Chip Floor planning considerations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
