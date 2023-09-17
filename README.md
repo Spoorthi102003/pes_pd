@@ -121,3 +121,17 @@ Device Models: These are mathematical representations of transistors, diodes, re
 * **Clock Tree Synthesis**: Clock tree synthesis (CTS) is a crucial step in ensuring that the clock signals reach all parts of the chip with minimal skew and jitter. It involves the generation of a hierarchical tree structure to distribute the clock signals uniformly and meet timing requirements.
 * **Routing**: After placement and CTS, routing is performed to create the physical wires (metal traces) that connect all the components on the chip. This process adheres to design rules and timing constraints.
 * **Signoff**: The Signoff stage encompasses a series of verification and validation steps
+# Getting familiar with open source EDA tools
+**Design preperation steps**
+Type the following commad to open Openlane EDA tool
+
+`cd Desktop/work/tools/`
+`cd openlane_working_dir/`
+`cd openlane`
+`docker`
+
+Now the shell opens. In the shell type `./flow.tcl -interactive`
+
+To import all pacakges type `package require openlane 0.9`
+
+
