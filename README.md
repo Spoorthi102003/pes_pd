@@ -306,10 +306,21 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 
 ![Screenshot 2023-09-18 183215](https://github.com/Spoorthi102003/pes_pd/assets/143829280/45f916ab-d363-42ff-9fd9-fd25a0715884)
 
- 
+# Fixing DRC errors
+* There is an error in poly.mag file
+* In the tckon window type  `load poly`
+* In the drc_tests directory open sky130A.tech file by typing the command `gedit sky130A.tech`
+* Fix the following errors
+![Screenshot 2023-09-18 185638](https://github.com/Spoorthi102003/pes_pd/assets/143829280/3b66a69c-3719-4f9e-a0e4-da38f2720fdf)
 
+![Screenshot 2023-09-18 185706](https://github.com/Spoorthi102003/pes_pd/assets/143829280/c5b4f7ac-89d4-4633-a0c4-dd5358407eb8)
 
+![image](https://github.com/Spoorthi102003/pes_pd/assets/143829280/56587be9-39c5-46ec-8d49-4eac7e0bfc87)
 
+* Again in the tckon window type `load tech sky130A.tech` and `drc check`
+* We can see that the drc error has been corrected
+
+![Screenshot 2023-09-18 191934](https://github.com/Spoorthi102003/pes_pd/assets/143829280/84b171d5-4d3a-4020-9861-643891f9c411)
 
 
 
