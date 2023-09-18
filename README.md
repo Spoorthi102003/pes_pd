@@ -287,14 +287,24 @@ To extract Spice Netlist we perform the following steps in the tkcon window:
 
 Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' directory
 
+# Sky130 PDKS and Steps to Download Magic Tool
+* Type the following commands:
+` wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz`
+* Move the file to desktop using the following command:
+`mv drc_tests.tgz Desktop/`
+* Go to the Desktop directory and extract the file by `tar xfz drc_tests.tgz`
+* To open the software type `magic -d XR` in the drc_tests directory
 
+![Screenshot 2023-09-18 182314](https://github.com/Spoorthi102003/pes_pd/assets/143829280/382b856e-8515-4ce9-92ea-bdf144112935)
 
+* Open the met3.mag file 
+* If we select an area and type `drc why` in the tkcon window, it will show us the DRC error.
+![Screenshot 2023-09-18 182443](https://github.com/Spoorthi102003/pes_pd/assets/143829280/768c511d-bc7a-4a94-9375-b98a3e489ee3)
 
+* To add contact cuts to metal3, first select an area using left and right click. Then hovering over the m3contact we click middle mouse button.
+* Type the command `cif see VIA2 ` in the tckon window
 
-
-
-
-
+![Screenshot 2023-09-18 183215](https://github.com/Spoorthi102003/pes_pd/assets/143829280/45f916ab-d363-42ff-9fd9-fd25a0715884)
 
 
 
