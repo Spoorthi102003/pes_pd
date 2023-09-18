@@ -390,7 +390,7 @@ The next requirement is that the width of the cell should be the odd multiple of
 
 ![Screenshot 2023-09-18 215424](https://github.com/Spoorthi102003/pes_pd/assets/143829280/96c6904a-682d-4797-8dba-6c87620231ed)
 
-* Type less `sky130_vsdinv.lef`.
+* Type `less sky130_vsdinv.lef`.
 
 ![Screenshot 2023-09-18 215456](https://github.com/Spoorthi102003/pes_pd/assets/143829280/b1d90e95-aaed-4eae-a6e9-7f4b63be806f)
 
