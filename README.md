@@ -346,15 +346,16 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 `drc style drc(full)`
 `drc check`
 * As we can see the error still persists
+
 ![Screenshot 2023-09-18 202246](https://github.com/Spoorthi102003/pes_pd/assets/143829280/abf85918-733c-430a-8489-d88340c0ac00)
 
 We can fix it by doing this:
+
 ![Screenshot 2023-09-18 204404](https://github.com/Spoorthi102003/pes_pd/assets/143829280/b9584a3c-01c7-4c57-9353-f4718dca8aec)
 
 </detils>
 
-
-
-
+<details>
+<summary>DAY4</summary>
 
 
