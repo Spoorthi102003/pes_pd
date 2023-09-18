@@ -306,7 +306,7 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 
 ![Screenshot 2023-09-18 183215](https://github.com/Spoorthi102003/pes_pd/assets/143829280/45f916ab-d363-42ff-9fd9-fd25a0715884)
 
-
+ 
 
 
 
