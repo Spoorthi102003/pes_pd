@@ -341,10 +341,10 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 
 * In the tckon window type
 
-```tech load sky130A.tech
-drc check
-drc style drc(full)
-drc check```
+`tech load sky130A.tech`
+`drc check`
+`drc style drc(full)`
+`drc check`
 * As we can see the error still persists
 ![Screenshot 2023-09-18 202246](https://github.com/Spoorthi102003/pes_pd/assets/143829280/abf85918-733c-430a-8489-d88340c0ac00)
 
