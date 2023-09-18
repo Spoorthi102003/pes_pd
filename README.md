@@ -272,15 +272,16 @@ Pressing 's' three times will show what parts are connected to the selected part
 ![Screenshot 2023-09-18 151332](https://github.com/Spoorthi102003/pes_pd/assets/143829280/aba69f2c-8a2d-482f-81e1-038cbffd6a4e)
 
 **Steps to Create Standard Cell Layout and Extract Spice Netlist**
+
 We can view the DRC error:
 
 ![Screenshot 2023-09-18 151842](https://github.com/Spoorthi102003/pes_pd/assets/143829280/9be1fcfa-d24f-477f-9481-db8cc22d3e2b)
 
 To extract Spice Netlist we perform the following steps in the tkcon window:
-`pwd`
-`extract all`
-`ext2spice cthresh 0 rthresh 0`
-`ext2spice`
+* `pwd`
+* `extract all`
+* `ext2spice cthresh 0 rthresh 0`
+* `ext2spice`
 
 ![Screenshot 2023-09-18 152243](https://github.com/Spoorthi102003/pes_pd/assets/143829280/2bd7f09f-0741-45f0-bda3-667149c8a700)
 
