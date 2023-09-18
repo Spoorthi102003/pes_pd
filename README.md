@@ -376,6 +376,7 @@ The 'tracks.info' file is used during the routing stage.Routes are the metal tra
 ![Screenshot 2023-09-18 214949](https://github.com/Spoorthi102003/pes_pd/assets/143829280/37a89e54-6f88-4479-8b3c-7ae9199332fa)
 
 * The following is the result.
+
 ![Screenshot 2023-09-18 212910](https://github.com/Spoorthi102003/pes_pd/assets/143829280/926aaae5-f751-4469-bcd2-e9f90f84afa9)
 
 * This shows that the routing of 'li1' layer can happen only along this grid.Having the ports at the intersection of horizontal and vertical tracks ensure that the route can reach that port from the 'y' as well as 'x' direction.
