@@ -324,6 +324,9 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 
 **DRC error as geometrical construct**
 * Open nwell.mag file
+
+![Screenshot 2023-09-18 204136](https://github.com/Spoorthi102003/pes_pd/assets/143829280/5f3fe5df-f0be-4b35-9fab-3d8afae5ba7d)
+
 * Type the following command
 * `cif ostyle drc`
 * `cif see dnwell_shrink`
@@ -332,14 +335,23 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 * To find incorrect or missing rules and fix them
 * Open sky130A.tech file on gedit as `gedit sky130A.tech`
 * Make the following changes:
+![Screenshot 2023-09-18 203456](https://github.com/Spoorthi102003/pes_pd/assets/143829280/508b3fce-66f9-4d77-a4a0-f8973bff1205)
 
+![Screenshot 2023-09-18 203427](https://github.com/Spoorthi102003/pes_pd/assets/143829280/fb8bebe1-f587-4ded-945b-2c90743c863e)
 
-* In the 
+* In the tckon window type
 
+```tech load sky130A.tech
+drc check
+drc style drc(full)
+drc check```
+* As we can see the error still persists
+![Screenshot 2023-09-18 202246](https://github.com/Spoorthi102003/pes_pd/assets/143829280/abf85918-733c-430a-8489-d88340c0ac00)
 
+We can fix it by doing this:
+![Screenshot 2023-09-18 204404](https://github.com/Spoorthi102003/pes_pd/assets/143829280/b9584a3c-01c7-4c57-9353-f4718dca8aec)
 
-
-
+</detils>
 
 
 
