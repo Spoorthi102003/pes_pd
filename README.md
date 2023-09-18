@@ -4,7 +4,7 @@
 <summary>DAY1</summary>
   
 ## Inception of open-source EDA, OpenLANE and Sky130 PDK
-* How to talk to computers??
+* How to talk to computers?? 
 
 An Arduino board is a popular open-source electronics platform that consists of a microcontroller and, a development environment. It is a small computer chip that processes instructions and controls the behavior of your electronic project.
 Arduino boards work by providing a platform for you to write and upload code that controls the behavior of the microcontroller on the board.
