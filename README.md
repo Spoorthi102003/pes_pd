@@ -322,11 +322,19 @@ Now the files sky130_inv.ext and sky130_inv.spice are in 'vsdstdcelldesign' dire
 
 ![Screenshot 2023-09-18 191934](https://github.com/Spoorthi102003/pes_pd/assets/143829280/84b171d5-4d3a-4020-9861-643891f9c411)
 
+**DRC error as geometrical construct**
+* Open nwell.mag file
+* Type the following command
+* `cif ostyle drc`
+* `cif see dnwell_shrink`
+* `cif see nwell_missing`
+
+* To find incorrect or missing rules and fix them
+* Open sky130A.tech file on gedit as `gedit sky130A.tech`
+* Make the following changes:
 
 
-
-
-
+* In the 
 
 
 
