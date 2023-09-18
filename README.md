@@ -141,6 +141,8 @@ To import all packages type `package require openlane 0.9`
 * Here we have done it for dfxtp_2 (2:1 dmux)
 * Also under the runs folder we can check out the netlist file generated after synthesis.
 
+![Screenshot 2023-09-18 104950](https://github.com/Spoorthi102003/pes_pd/assets/143829280/e8b1fc0a-cd4a-46f5-8048-3a1ef0ea80b6)
+
 ![Screenshot 2023-09-17 225232](https://github.com/Spoorthi102003/pes_pd/assets/143829280/a96a1184-5347-4793-b79e-9e98beef5876)
 
 ![Screenshot 2023-09-17 230314](https://github.com/Spoorthi102003/pes_pd/assets/143829280/62f44d5c-a2a8-4a41-a063-860600e14698)
@@ -154,7 +156,7 @@ To import all packages type `package require openlane 0.9`
 **Utilization Factor and Aspect Ratio**
 Define Width and height of core and die: The die refers to the entire semiconductor chip, including the core, I/O pads, and any additional features.The core refers to the central area of the chip where most of the active circuitry resides. It includes components like the CPU, GPU, memory, and other logic.
 
-**Utilization factor** Area occupied by netlist/Area of the core
+**Utilization factor**=Area occupied by netlist/Area of the core
 
 **Aspect ratio**=Height/width
 * **Pre-placed cells**: Preplaced cells are a group of fixed-location standard cells that are manually placed by the chip designer in specific locations on the silicon die during the chip floor planning process. Unlike regular standard cells, which are placed automatically by Electronic Design Automation (EDA) tools, preplaced cells are positioned by the designer before automated placement and routing.
@@ -165,6 +167,9 @@ Define Width and height of core and die: The die refers to the entire semiconduc
 
 * **Pin Placement**:Pin placement is an essential part of floorplanning to minimize buffering and improve power consumption and timing delays we use the HDL netlist to determine where a specific pin should be placed in the circuit. We join the common pins and try to keep the connections as efficient as possible. In the pin placement step, we use the HDL netlist to determine where a specific pin should be placed in the circuit. We join the common pins and try to keep the connections as efficient as possible. Pins are placed in the Die area.
 # Steps to run floorplan
+Give the command `run_floorplan` after run_synthesis
+
+![Screenshot 2023-09-18 105210](https://github.com/Spoorthi102003/pes_pd/assets/143829280/1ffd0935-dadf-4ddb-841f-7e29cbdfa2a6)
 
 To open the Floorplan we go to the following directory:
 `vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/11-09_15-36/results/floorplan`
@@ -179,21 +184,55 @@ The zoomed-in view:
 ![Screenshot 2023-09-18 004906](https://github.com/Spoorthi102003/pes_pd/assets/143829280/5210b11c-409c-4bdc-ad97-8b359c0fa987)
 
 **Library Binding and Placement**
-Netlist Binding and Initial Place Design: The Library consists of cells, sizes of cells, various flavors and shapes of the cells, Timing, Power, and delay information. Now, we have the floorplan, netlist, and representation of components of netlist in the library.Place all the components such that the timing is not disturbed and distribute them properly.
+Netlist Binding and Initial Place Design: The Library consists of cells, sizes of cells, various flavors and shapes of the cells, Timing, Power, and delay information. Now, we have the floorplan, netlist, and representation of components of netlist in the library. Place all the components such that the timing is not disturbed and distribute them properly.
+![image](https://github.com/Spoorthi102003/pes_pd/assets/143829280/9f0e948c-d8c4-4931-bdfa-c74813443e20)
 
 # Placement
 * After run_floorplan, give the command `run_placement`
+![Screenshot 2023-09-18 105413](https://github.com/Spoorthi102003/pes_pd/assets/143829280/68bd746d-fc98-4095-9b5f-adb54eddb58e)
+
 * To view the placement type the command `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def`
 ![Screenshot 2023-09-18 011459](https://github.com/Spoorthi102003/pes_pd/assets/143829280/24dbfecf-c9de-4889-8074-2c7c9539a9f1)
 
 * After we zoom in we can see the placement of the standard cells in the standard cell rows.
 ![Screenshot 2023-09-18 011513](https://github.com/Spoorthi102003/pes_pd/assets/143829280/c8bf3138-63db-4dd1-8023-00c3ee6244f8)
 
+# Cell Design and Characterization Flow
 
+* Inputs - PDKs (Process design kits), DRC & LVS rules, SPICE models, library & user-defined specs.
+* Design Steps - The design steps of cell design involve Circuit Design, Layout Design, and Characterization. The software GUNA is used for characterization. The characterization can be classified as Timing characterization, Power characterization, and Noise characterization.
+* Outputs - Outputs of the Design are CDL (Circuit Description Language), GDSII, LEF, extracted Spice netlist (.cir), timing, noise, and power.libs, function.
 
+**Characterization**: timing, noise power.libs functions read in the models and tech files and generate extracted spice Netlist. Read the subcircuits and attach power sources. Apply stimulus to characterization setup, provide necessary output capacitance loads, and provide necessary simulation commands.
+**This is for an inverter**
+* Read the model files.
+* Read the extracted SPICE netlist.
+* Recognize the behavior of the buffer.
+* Attaching the necessary power sources
+* Apply the stimulus, which is the input signal to the circuit.
+* Read the sub-circuit of the inverter.
+* Provide necessary output capacitances.
+* Provide the necessary simulation commands
+  
+# General Timing characterization parameters
+Timing threshold:
+* slew_low_rise_thr - 20% from bottom power supply when the signal is rising
+* slew_high_rise_thr - 20% from top power supply when the signal is rising
+* slew_low_fall_thr - 20% from bottom power supply when the signal is falling
+* slew_high_fall_thr - 20% from top power supply when the signal is falling
+* in_rise_thr - 50% point on the rising edge of input
+* in_fall_thr - 50% point on the falling edge of input
+* out_rise_thr - 50% point on the rising edge of ouput
+* out_fall_thr - 50% point on the falling edge of ouput
+  
+These are the main parameters that we use to calculate factors such as propogation delay and transition time
 
+**propogation delay**= time(out_thr) - time(in_thr)
+**Transition time**= time(slew_high_rise_thr) - time(slew_low_rise_thr)
+</details>
 
-
+<details>
+<summary>DAY3</summary>
 
 
 
