@@ -199,11 +199,13 @@ Netlist Binding and Initial Place Design: The Library consists of cells, sizes o
 
 # Cell Design and Characterization Flow
 
+**Cell Design Flow**
 * Inputs - PDKs (Process design kits), DRC & LVS rules, SPICE models, library & user-defined specs.
 * Design Steps - The design steps of cell design involve Circuit Design, Layout Design, and Characterization. The software GUNA is used for characterization. The characterization can be classified as Timing characterization, Power characterization, and Noise characterization.
 * Outputs - Outputs of the Design are CDL (Circuit Description Language), GDSII, LEF, extracted Spice netlist (.cir), timing, noise, and power.libs, function.
 
 **Characterization**: timing, noise power.libs functions read in the models and tech files and generate extracted spice Netlist. Read the subcircuits and attach power sources. Apply stimulus to characterization setup, provide necessary output capacitance loads, and provide necessary simulation commands.
+
 **This is for an inverter**
 * Read the model files.
 * Read the extracted SPICE netlist.
@@ -215,7 +217,7 @@ Netlist Binding and Initial Place Design: The Library consists of cells, sizes o
 * Provide the necessary simulation commands
   
 # General Timing characterization parameters
-Timing threshold:
+**Timing threshold**:
 * slew_low_rise_thr - 20% from bottom power supply when the signal is rising
 * slew_high_rise_thr - 20% from top power supply when the signal is rising
 * slew_low_fall_thr - 20% from bottom power supply when the signal is falling
