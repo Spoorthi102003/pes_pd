@@ -355,7 +355,5 @@ We can fix it by doing this:
 
 </detils>
 
-<details>
-<summary>DAY4</summary>
 
 
