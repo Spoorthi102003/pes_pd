@@ -151,6 +151,49 @@ To import all packages type `package require openlane 0.9`
   
 # Chip Floor planning considerations
 
+**Utilization Factor and Aspect Ratio**
+Define Width and height of core and die: The die refers to the entire semiconductor chip, including the core, I/O pads, and any additional features.The core refers to the central area of the chip where most of the active circuitry resides. It includes components like the CPU, GPU, memory, and other logic.
+
+**Utilization factor** Area occupied by netlist/Area of the core
+
+**Aspect ratio**=Height/width
+* **Pre-placed cells**: Preplaced cells are a group of fixed-location standard cells that are manually placed by the chip designer in specific locations on the silicon die during the chip floor planning process. Unlike regular standard cells, which are placed automatically by Electronic Design Automation (EDA) tools, preplaced cells are positioned by the designer before automated placement and routing.
+  
+![image](https://github.com/Spoorthi102003/pes_pd/assets/143829280/2821dbea-1e2b-408b-9abf-5a0e2b65e126)
+
+* **Decoupling capacitors**: A decoupling capacitor, often referred to simply as a "decap," is an essential electronic component used in electronic circuits, particularly on printed circuit boards (PCBs) and integrated circuits (ICs). Its primary purpose is to stabilize and filter the power supply voltage to ensure that sensitive components receive a stable and noise-free supply of power. Here are the key aspects of decoupling capacitors:
+
+* **Pin Placement**:Pin placement is an essential part of floorplanning to minimize buffering and improve power consumption and timing delays we use the HDL netlist to determine where a specific pin should be placed in the circuit. We join the common pins and try to keep the connections as efficient as possible. In the pin placement step, we use the HDL netlist to determine where a specific pin should be placed in the circuit. We join the common pins and try to keep the connections as efficient as possible. Pins are placed in the Die area.
+# Steps to run floorplan
+
+To open the Floorplan we go to the following directory:
+`vsduser@vsdsquadron:~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/11-09_15-36/results/floorplan`
+
+Then type the following command:
+`magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &`
+
+The layout looks like this:
+![Screenshot 2023-09-18 004841](https://github.com/Spoorthi102003/pes_pd/assets/143829280/6242cf1b-14e4-4691-9852-b40cd2c2de12)
+
+The zoomed-in view:
+![Screenshot 2023-09-18 004906](https://github.com/Spoorthi102003/pes_pd/assets/143829280/5210b11c-409c-4bdc-ad97-8b359c0fa987)
+
+**Library Binding and Placement**
+Netlist Binding and Initial Place Design: The Library consists of cells, sizes of cells, various flavors and shapes of the cells, Timing, Power, and delay information. Now, we have the floorplan, netlist, and representation of components of netlist in the library.Place all the components such that the timing is not disturbed and distribute them properly.
+
+# Placement
+* After run_floorplan, give the command `run_placement`
+* To view the placement type the command `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def`
+![Screenshot 2023-09-18 011459](https://github.com/Spoorthi102003/pes_pd/assets/143829280/24dbfecf-c9de-4889-8074-2c7c9539a9f1)
+
+* After we zoom in we can see the placement of the standard cells in the standard cell rows.
+![Screenshot 2023-09-18 011513](https://github.com/Spoorthi102003/pes_pd/assets/143829280/c8bf3138-63db-4dd1-8023-00c3ee6244f8)
+
+
+
+
+
+
 
 
 
