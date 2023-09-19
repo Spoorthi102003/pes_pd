@@ -394,11 +394,37 @@ The next requirement is that the width of the cell should be the odd multiple of
 
 ![Screenshot 2023-09-18 215456](https://github.com/Spoorthi102003/pes_pd/assets/143829280/b1d90e95-aaed-4eae-a6e9-7f4b63be806f)
 
+**Steps to Include New Cell in Synthesis**
+* We copy the .mag file that we created to the 'src' folder of picorv32a folder.
 
+  * Next we have to go to this directory
+`cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a`
+and type `gedit config.tcl`
+and make the following changes
 
+![Screenshot 2023-09-18 181122](https://github.com/Spoorthi102003/pes_pd/assets/143829280/2c444007-fc10-4f23-a5f0-33160f8f3d17)
 
+Next open Openlane on interactive mode:
 
+In this directory type `cd ~/Desktop/work/tools/openlane_working_dir/openlane`
+`docker`
+`./flow.tcl -interactive`
+`package require openlane 0.9`
+`prep -design picorv32a -tag 16-09_17-39 -overwrite`
+`set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
+`add_lefs -src $lefs`
+`run_synthesis`
+![Screenshot 2023-09-19 092005](https://github.com/Spoorthi102003/pes_pd/assets/143829280/989a1221-ee28-494b-9682-bada8d1811b6)
 
+We see that it is being violated 
+To fix this,
+![Screenshot 2023-09-19 092144](https://github.com/Spoorthi102003/pes_pd/assets/143829280/2f718614-5d3d-4a47-8587-0a6434e7e987)
 
-
+`init_floorplan`
+`run_placement`
+Then go to the following directory `cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/placement`
+And type `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &`
+![Screenshot 2023-09-19 092820](https://github.com/Spoorthi102003/pes_pd/assets/143829280/b4c51fe0-b038-4613-836b-28870ab161fb)
+![Screenshot 2023-09-19 092849](https://github.com/Spoorthi102003/pes_pd/assets/143829280/43fc67e6-f6c8-4ddd-baca-ce0e4422c404)
+![Screenshot 2023-09-19 095009](https://github.com/Spoorthi102003/pes_pd/assets/143829280/0ed9541a-4e2a-4f4e-9b6f-73f70cd22395)
 
