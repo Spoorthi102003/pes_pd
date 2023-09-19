@@ -235,9 +235,6 @@ These are the main parameters that we use to calculate factors such as propogati
 
 <details>
 <summary>DAY3</summary>
-  
-# Labs for CMOS inverter ngspice simulations
-**I/O placer revision**
 
 # Inception of Layout and CMOS Fabrication Process
 * Substrate Selection: In the initial phase, the appropriate semiconductor substrate is chosen.
