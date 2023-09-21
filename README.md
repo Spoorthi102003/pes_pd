@@ -433,10 +433,12 @@ And type `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sk
 ![Screenshot 2023-09-21 161718](https://github.com/Spoorthi102003/pes_pd/assets/143829280/4b63f074-c570-43b3-b415-52c560b82123)
 
 ![Screenshot 2023-09-21 161800](https://github.com/Spoorthi102003/pes_pd/assets/143829280/c341c723-bdb1-4f08-8878-2585668457fc)
-When we run `sta pre_sta.conf` we see slack violation.
+
+*When we run `sta pre_sta.conf` we see slack violation.
+
 ![Screenshot 2023-09-21 162258](https://github.com/Spoorthi102003/pes_pd/assets/143829280/9c6a232b-781c-43b6-9ac4-964f52256231)
 
-To reduce slack violation we set the (SYNTH_MAX_FANOUT) = 4
+* To reduce slack violation we set the (SYNTH_MAX_FANOUT) = 4
 ![Screenshot 2023-09-21 163002](https://github.com/Spoorthi102003/pes_pd/assets/143829280/65812ee9-766d-4a28-b2a2-6a2c61955206)
 
 # Timing analysis with real clocks using openSTA
@@ -451,6 +453,7 @@ To reduce slack violation we set the (SYNTH_MAX_FANOUT) = 4
 * `init_floorplan`
 * `run_placement`
 * `run_cts`
+
 ![Screenshot 2023-09-21 164917](https://github.com/Spoorthi102003/pes_pd/assets/143829280/68931150-666b-46c1-b146-9e580f600a7e)
 ![Screenshot 2023-09-21 165145](https://github.com/Spoorthi102003/pes_pd/assets/143829280/e0fb0dfc-cd6e-4c6e-b45c-f450770b0f87)
 * `openroad`
@@ -509,6 +512,7 @@ To reduce slack violation we set the (SYNTH_MAX_FANOUT) = 4
 * `run_routing`
 
 ![Screenshot 2023-09-21 171250](https://github.com/Spoorthi102003/pes_pd/assets/143829280/a8d9d3a8-b649-41a6-8a95-542c86c896b1)
+
 ![Screenshot 2023-09-21 170850](https://github.com/Spoorthi102003/pes_pd/assets/143829280/4f774ecd-1ee4-4488-9152-3bb0b6e2040f)
 
 ![Screenshot 2023-09-21 170932](https://github.com/Spoorthi102003/pes_pd/assets/143829280/fb478b2f-05a6-4003-95d5-9361c826d8eb)
